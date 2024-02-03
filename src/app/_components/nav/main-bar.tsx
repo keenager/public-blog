@@ -14,7 +14,7 @@ export default function MainBar() {
           {/* Links */}
           <div className="hidden items-center space-x-16 md:flex md:justify-center md:basis-4/6">
             {routeList.map(({ href, name }) => (
-              <MenuLink href={href} name={name} />
+              <MenuLink key={href} href={href} name={name} />
             ))}
           </div>
           <div className="md:basis-1/6" />

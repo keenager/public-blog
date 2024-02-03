@@ -4,7 +4,7 @@ export const routeList = [
   // { href: "/app", name: "앱" },
 ];
 
-export const blogTagList = [
+export const tagRouteList = [
   // { href: "/blog/?tag=law", name: "법률" },
   { href: "/blog/?tag=book", name: "책" },
   { href: "/blog/?tag=dev", name: "웹개발" },

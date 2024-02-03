@@ -3,7 +3,7 @@ title: "Toast UI Editor에서 각주 기능 구현하기"
 createDate: "2023-09-12"
 updateDate: "2023-12-06"
 description: "Toast UI(TUI) Editor에서 각주(footnote) 기능 구현하기...."
-tag: "개발"
+tag: "웹개발"
 ---
 
 ### 들어가며
