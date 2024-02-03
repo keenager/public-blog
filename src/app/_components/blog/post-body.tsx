@@ -3,9 +3,11 @@ import "./footnote.css";
 
 export default function PostBody({ content }: { content: string }) {
   return (
-    <section
-      className="markdown-body"
-      dangerouslySetInnerHTML={{ __html: content }}
-    />
+    <section>
+      <article
+        className="markdown-body"
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
+    </section>
   );
 }

@@ -1,7 +1,6 @@
 @media (prefers-color-scheme: dark) {
   .markdown-body,
   [data-theme="dark"] {
-    /*dark*/
     color-scheme: dark;
     --color-prettylights-syntax-comment: #8b949e;
     --color-prettylights-syntax-constant: #79c0ff;
@@ -58,7 +57,6 @@
 @media (prefers-color-scheme: light) {
   .markdown-body,
   [data-theme="light"] {
-    /*light*/
     color-scheme: light;
     --color-prettylights-syntax-comment: #57606a;
     --color-prettylights-syntax-constant: #0550ae;
@@ -423,19 +421,28 @@
 .markdown-body p {
   margin-top: 0;
   margin-bottom: 10px;
-  font-size: 1.125rem;
-  color: hsl(214deg 16% 64%);
+  /* color: hsl(214deg 16% 64%); */
+  @apply text-lg text-black dark:text-slate-500;
 }
 
 .markdown-body p code {
-  @apply text-white;
+  @apply bg-slate-200 dark:bg-slate-800;
+  @apply dark:text-slate-300;
 }
 
 .markdown-body blockquote {
   margin: 0;
   padding: 0 1em;
-  @apply px-3 py-5 bg-slate-800 italic;
+  @apply px-3 py-5 bg-slate-300 dark:bg-slate-800;
   @apply rounded-r-md border-l-4 border-l-primary;
+}
+
+.markdown-body blockquote blockquote {
+  @apply bg-slate-400 dark:bg-slate-700;
+}
+
+.markdown-body blockquote p {
+  @apply italic dark:text-slate-500;
 }
 
 .markdown-body ul,

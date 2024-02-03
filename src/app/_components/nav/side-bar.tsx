@@ -1,4 +1,5 @@
-import { navbarItems } from "./nav-bar";
+import { blogTagList, routeList } from "@/lib/constants";
+import MenuLink from "./link";
 
 export default function SideBar() {
   const hideDrawer = () => {
@@ -13,9 +14,18 @@ export default function SideBar() {
       <label htmlFor="nav-drawer" className="drawer-overlay"></label>
 
       <ul className="menu h-full w-48 bg-base-200 p-4">
-        {navbarItems.map((item) => (
-          <li key={item.key} onClick={hideDrawer}>
-            {item}
+        {routeList.map(({ href, name }) => (
+          <li key={href} onClick={hideDrawer}>
+            <MenuLink href={href} name={name} />
+            {href.includes("blog") && (
+              <ul>
+                {blogTagList.map(({ href, name }) => (
+                  <li>
+                    <MenuLink href={href} name={name} />
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>

@@ -1,5 +1,6 @@
+import { routeList } from "@/lib/constants";
 import Link from "next/link";
-import { navbarItems } from "./nav-bar";
+import MenuLink from "./link";
 
 export default function MainBar() {
   return (
@@ -12,7 +13,9 @@ export default function MainBar() {
           </Link>
           {/* Links */}
           <div className="hidden items-center space-x-16 md:flex md:justify-center md:basis-4/6">
-            {navbarItems}
+            {routeList.map(({ href, name }) => (
+              <MenuLink href={href} name={name} />
+            ))}
           </div>
           <div className="md:basis-1/6" />
           <label htmlFor="nav-drawer" className="md:hidden">

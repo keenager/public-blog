@@ -2,7 +2,7 @@
 title: "Markdown Test"
 createDate: "2024-02-01"
 updateDate: "2024-02-01"
-excerpt: "This is markdown test..."
+description: "This is markdown test..."
 tag: "test"
 ---
 
