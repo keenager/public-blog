@@ -1,7 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import { tagRouteList } from "./constants";
+import { tagBlogRouteList } from "./constants";
 import { Post } from "@/types/post";
 
 const postsDirectory = join(process.cwd(), "_posts");
@@ -28,7 +28,9 @@ export function getAllPosts(): Post[] {
 
 export function getPostsByTag(tag: string): Post[] {
   const fileNames = getFileNames();
-  const tagName = tagRouteList.find((route) => route.href.includes(tag))?.name;
+  const tagName = tagBlogRouteList.find((route) =>
+    route.href.includes(tag)
+  )?.name;
   const posts = fileNames
     .map((fileName) => getPostBySlug(fileName))
     .filter((post) => post.tag === tagName)

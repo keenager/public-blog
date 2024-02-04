@@ -1,4 +1,4 @@
-import { routeList } from "@/lib/constants";
+import { routeList, tagBlogRouteList } from "@/lib/constants";
 import Link from "next/link";
 import MenuLink from "./link";
 
@@ -8,14 +8,24 @@ export default function MainBar() {
       <input id="nav-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         <div className="flex justify-between bg-white/80 px-8 py-4 shadow-md backdrop-blur-md dark:bg-gray-900 md:px-16">
-          <Link href="/" className="md:basis-1/6">
-            RedTraining
-          </Link>
+          <div className="flex items-center">
+            <Link href="/" className="md:basis-1/6">
+              RedTraining
+            </Link>
+          </div>
           {/* Links */}
           <div className="hidden items-center space-x-16 md:flex md:justify-center md:basis-4/6">
-            {routeList.map(({ href, name }) => (
-              <MenuLink key={href} href={href} name={name} />
-            ))}
+            <ul className="menu menu-horizontal p-0 m-0">
+              {routeList.map(({ href, name }) =>
+                name === "블로그" ? (
+                  <BlogSubMenu key={href} />
+                ) : (
+                  <li key={href}>
+                    <MenuLink href={href} name={name} />
+                  </li>
+                )
+              )}
+            </ul>
           </div>
           <div className="md:basis-1/6" />
           <label htmlFor="nav-drawer" className="md:hidden">
@@ -24,6 +34,25 @@ export default function MainBar() {
         </div>
       </div>
     </>
+  );
+}
+
+function BlogSubMenu() {
+  return (
+    <li>
+      <details>
+        <summary>
+          <MenuLink href="/blog" name="블로그" />
+        </summary>
+        <ul className="p-2 bg-base-100 rounded-t-none dark:bg-gray-900">
+          {tagBlogRouteList.map(({ href, name }) => (
+            <li key={href}>
+              <MenuLink href={href} name={name} />
+            </li>
+          ))}
+        </ul>
+      </details>
+    </li>
   );
 }
 
