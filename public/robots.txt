@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://redtraining.vercel.app
+
+# Sitemaps
+Sitemap: https://redtraining.vercel.app/sitemap.xml
