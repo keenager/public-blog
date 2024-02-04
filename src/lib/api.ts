@@ -2,11 +2,11 @@ import { Post } from "@/types/post";
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
+import { tagRouteList } from "./constants";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
 export function getFileNames() {
-  console.log("postsDirectory", postsDirectory);
   return fs.readdirSync(postsDirectory);
 }
 
@@ -22,6 +22,16 @@ export function getAllPosts(): Post[] {
   const fileNames = getFileNames();
   const posts = fileNames
     .map((fileName) => getPostBySlug(fileName))
+    .sort((p1, p2) => (p1.updateDate > p2.updateDate ? -1 : 1));
+  return posts;
+}
+
+export function getPostsByTag(tag: string): Post[] {
+  const fileNames = getFileNames();
+  const tagName = tagRouteList.find((route) => route.href.includes(tag))?.name;
+  const posts = fileNames
+    .map((fileName) => getPostBySlug(fileName))
+    .filter((post) => post.tag === tagName)
     .sort((p1, p2) => (p1.updateDate > p2.updateDate ? -1 : 1));
   return posts;
 }

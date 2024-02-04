@@ -6,6 +6,6 @@ export const routeList = [
 
 export const tagRouteList = [
   // { href: "/blog/?tag=law", name: "법률" },
-  { href: "/blog/?tag=book", name: "책" },
-  { href: "/blog/?tag=dev", name: "웹개발" },
+  { href: "/blog/tags/book", name: "책" },
+  { href: "/blog/tags/dev", name: "웹개발" },
 ];

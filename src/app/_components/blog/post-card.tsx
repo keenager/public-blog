@@ -13,7 +13,7 @@ export default function PostCard({ post }: { post: Post }) {
       </div> */}
       {/* 제목 */}
       <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-        <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+        <Link href={`/blog/posts/${post.slug}`}>{post.title}</Link>
       </h2>
       {/* 요약 */}
       <p className="mb-5 font-light text-gray-500 dark:text-gray-400">
@@ -22,7 +22,10 @@ export default function PostCard({ post }: { post: Post }) {
       {/* 하단(글쓴이, 링크) */}
       <div className="flex items-center justify-between">
         <Badge name={post.tag} />
-        <TextLink href={`/blog/${post.slug}`} style="inline-flex items-center">
+        <TextLink
+          href={`/blog/posts/${post.slug}`}
+          style="inline-flex items-center"
+        >
           Read more &rarr;
         </TextLink>
       </div>
