@@ -38,15 +38,22 @@ export default function MainBar() {
 }
 
 function BlogSubMenu() {
+  const closeSubMenu = () => {
+    const $blogMenu = document.getElementById(
+      "blog-menu"
+    ) as HTMLDetailsElement;
+    $blogMenu.open = false;
+  };
+
   return (
     <li>
-      <details>
+      <details id="blog-menu">
         <summary>
           <MenuLink href="/blog" name="블로그" />
         </summary>
         <ul className="p-2 bg-base-100 rounded-t-none dark:bg-gray-900">
           {tagBlogRouteList.map(({ href, name }) => (
-            <li key={href}>
+            <li key={href} onClick={closeSubMenu}>
               <MenuLink href={href} name={name} />
             </li>
           ))}
