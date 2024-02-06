@@ -214,9 +214,15 @@
 
 .markdown-body img {
   border-style: none;
-  max-width: 100%;
   box-sizing: content-box;
-  background-color: var(--color-canvas-default);
+  /* background-color: var(--color-canvas-default); */
+  @apply block mx-auto mt-3;
+  @apply max-h-[800px] max-w-full;
+  @apply rounded;
+}
+
+.markdown-body p:has(img) {
+  @apply text-center text-base;
 }
 
 .markdown-body code,
