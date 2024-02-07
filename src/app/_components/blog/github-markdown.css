@@ -216,7 +216,7 @@
   border-style: none;
   box-sizing: content-box;
   /* background-color: var(--color-canvas-default); */
-  @apply block mx-auto mt-3;
+  @apply block mx-auto mb-1;
   @apply max-h-[800px] max-w-full;
   @apply rounded;
 }

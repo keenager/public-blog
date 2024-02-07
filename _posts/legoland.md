@@ -18,17 +18,13 @@ tag: "여행"
 
 이렇게 허허벌판.... 난 누구 여긴 어디
 
-​![여기가 호텔 주차장이라는데.. 호텔 건물은 중앙에 작게 보이는 저 먼 곳에?](/assets/blog/legoland/image.png)
-여기가 호텔 주차장이라는데.. 호텔 건물은 중앙에 작게 보이는 저 먼 곳에?
+​![여기가 호텔 주차장이라는데.. 호텔 건물은 중앙에 작게 보이는 저 먼 곳에?](/assets/blog/legoland/image.png)여기가 호텔 주차장이라는데.. 호텔 건물은 중앙에 작게 보이는 저 먼 곳에?
 
-![어디로 가야합니까](/assets/blog/legoland/image-1.png)
-어디로 가야합니까
+![어디로 가야합니까](/assets/blog/legoland/image-1.png)어디로 가야합니까
 
-![여기로 오세요](/assets/blog/legoland/image-2.png)
-여기로 오세요
+![여기로 오세요](/assets/blog/legoland/image-2.png)여기로 오세요
 
-![여기에요!](/assets/blog/legoland/image-3.png)
-여기에요!
+![여기에요!](/assets/blog/legoland/image-3.png)여기에요!
 
 주차하고 짐 내려서 여기에서 기다리면 중대형의 노란색 셔틀버스가 와요! (기사님이 짐도 실어주심)
 
@@ -44,18 +40,15 @@ tag: "여행"
 
 ![우리 방 - 킹덤 테마방](/assets/blog/legoland/image-5.png "우리 방 - 킹덤 테마방")
 ![우리 방 - 킹덤 테마방](/assets/blog/legoland/image-6.png "우리 방 - 킹덤 테마방")
-![우리 방 - 킹덤 테마방](/assets/blog/legoland/image-7.png "우리 방 - 킹덤 테마방")
-우리 방 - 킹덤 테마방
+![우리 방 - 킹덤 테마방](/assets/blog/legoland/image-7.png "우리 방 - 킹덤 테마방")우리 방 - 킹덤 테마방
 
-![방에서 보이는 풍경](/assets/blog/legoland/image-8.png "방에서 보이는 풍경")
-방에서 보이는 풍경
+![방에서 보이는 풍경](/assets/blog/legoland/image-8.png "방에서 보이는 풍경")방에서 보이는 풍경
 
 방에 2층 침대도 있고, 레고 놀이할수 있는 판과 레고 적당히, TV 2대, 물, 커피머신, 화장실 욕조 등이 있어요! 어메니티는 만족! 거의 다 갖춰져 있어서 집에서 안 챙겨가도 될 정도
 
 (아래 사진 참조)
 
-![어메니티](/assets/blog/legoland/image-9.png "어메니티")
-어메니티
+![어메니티](/assets/blog/legoland/image-9.png "어메니티")어메니티
 
 호텔 투숙객(1박)은 레고랜드를 **2일 이용할 수 있어요!**
 
@@ -73,16 +66,12 @@ tag: "여행"
 ![레고랜드 풍경](/assets/blog/legoland/image-12.png "레고랜드 풍경")
 ![레고랜드 풍경](/assets/blog/legoland/image-13.png "레고랜드 풍경")
 ![레고랜드 풍경](/assets/blog/legoland/image-14.png "레고랜드 풍경")
+![공연](/assets/blog/legoland/image-15.png "공연")이렇게 공연도 하고요
 
-![공연](/assets/blog/legoland/image-15.png "공연")
-이렇게 공연도 하고요
 ![공연](/assets/blog/legoland/image-16.png "공연")
+![레고 말 타기](/assets/blog/legoland/image-17.png "레고 말 타기")레고 말도 타고요
 
-![레고 말 타기](/assets/blog/legoland/image-17.png "레고 말 타기")
-레고 말도 타고요
-
-![이거 진짜 레고로 만든거야?](/assets/blog/legoland/image-18.png "이거 진짜 레고로 만든거야?")
-이거 진짜 레고로 만든거야? 얼마나 걸릴까? 대단하다(반복)
+![이거 진짜 레고로 만든거야?](/assets/blog/legoland/image-18.png "이거 진짜 레고로 만든거야?")이거 진짜 레고로 만든거야? 얼마나 걸릴까? 대단하다(반복)
 
 금요일에 가니 확실히 사람이 적어서 한시간만에 가장 인기 있다는 기구 몇 종류를 클리어!
 
@@ -96,11 +85,9 @@ tag: "여행"
 
 내일 아침 조식을 먹을 수 있는 뷔페 식당, 밤 10시까지 포장도 가능한 스카이라인 라운지가 나와요.
 
-![스카이라인 라운지 메뉴판](/assets/blog/legoland/image-19.png "스카이라인 라운지 메뉴판")
-스카이라인 라운지 메뉴판
+![스카이라인 라운지 메뉴판](/assets/blog/legoland/image-19.png "스카이라인 라운지 메뉴판")스카이라인 라운지 메뉴판
 
-![스카이라인 라운지 메뉴판 2](/assets/blog/legoland/image-20.png "스카이라인 라운지 메뉴판 2")
-스카이라인 라운지 메뉴판 2
+![스카이라인 라운지 메뉴판 2](/assets/blog/legoland/image-20.png "스카이라인 라운지 메뉴판 2")스카이라인 라운지 메뉴판 2
 
 뭔가 저녁으로 먹기에는 메뉴들이 약간 부실해보여서.. 저희는 아래 공연들을 보면서 배민으로 자담치킨 약사명동점 마일드맵슐랭반반치킨을 시켜두었지요! (치킨 받을 곳 : 레고렌드 1층 로비 -> 그럼 전화 와서 5분 뒤에 내려오라고 하심)
 
@@ -108,18 +95,15 @@ tag: "여행"
 
 공연은 어떤 공연이냐? 먼저 마술공연 후 락앤롤!ㅋㅋ 간단한 율동 알려주고 아이들 일어나서 가볍게 흔들 수 있는 공연ㅎㅎ(5시 정도에 마술쇼, 6시부터 6시 20분까지 락앤롤)
 
-![마술쇼](/assets/blog/legoland/image-21.png "마술쇼")
-마술쇼
+![마술쇼](/assets/blog/legoland/image-21.png "마술쇼")마술쇼
 
-![락앤롤!](/assets/blog/legoland/image-22.png "락앤롤!")
-락앤롤!
+![락앤롤!](/assets/blog/legoland/image-22.png "락앤롤!")락앤롤!
 
 공연 끝나고 다시 방으로 올라와서 보물 찾기 시작!
 
 방에 가면 종이에 문제가 나와있고 맞추면 이렇게 보물을 획득합니다! 자물쇠를 풀어야 합니다. 왼쪽부터 순서대로 네자리 숫자 입력! (보물 : 작은 레고 2개) 엄마는 아 이게 보물이야? 약간 실망스럽지만 아이는 매우 좋아합니다ㅎㅎ
 
-![보물 찾기 성공](/assets/blog/legoland/image-23.png "보물 찾기 성공")
-보물 찾기 성공
+![보물 찾기 성공](/assets/blog/legoland/image-23.png "보물 찾기 성공")보물 찾기 성공
 
 ## 🎈두번째 헷갈리는 것!
 
@@ -162,9 +146,7 @@ _? 이럴거면 그냥 방에서 자유롭게 만들어도 되는데요....?_
 어른이 봐도 신기한 것들이 많은 레고랜드!
 
 ![블럭 판다](/assets/blog/legoland/image-24.png "블럭 판다")
-
-![미니어처](/assets/blog/legoland/image-25.png "미니어쳐")
-미니어처
+![미니어처](/assets/blog/legoland/image-25.png "미니어쳐")미니어처
 
 ## 🎈마지막으로 레고랜드 안에서 헷갈렸던 것!
 
