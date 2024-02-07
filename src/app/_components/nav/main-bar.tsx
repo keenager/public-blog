@@ -48,7 +48,7 @@ function BlogSubMenu() {
   return (
     <li>
       <details id="blog-menu">
-        <summary>
+        <summary onClick={closeSubMenu}>
           <MenuLink href="/blog" name="블로그" />
         </summary>
         <ul className="p-2 bg-base-100 rounded-t-none dark:bg-gray-900">
