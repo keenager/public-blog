@@ -1,5 +1,6 @@
 import PostBody from "@/app/_components/blog/post-body";
 import PostHeader from "@/app/_components/blog/post-header";
+import GoogleAd from "@/app/_components/common/google-ad";
 import { getPostBySlug } from "@/lib/api";
 import markdownToHtml from "@/lib/markdownToHtml";
 import { Metadata } from "next";
@@ -20,6 +21,7 @@ export default async function Post({ params }: Params) {
         tag={post.tag}
       />
       <PostBody content={content} />
+      <GoogleAd />
     </>
   );
 }

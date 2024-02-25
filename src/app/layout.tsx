@@ -23,7 +23,6 @@ export default function RootLayout({
         <main className="bg-white px-8 py-8 dark:bg-gray-900 md:px-16 md:py-16">
           {children}
         </main>
-        <GoogleAd />
         <footer className="text-center bg-white dark:bg-gray-900">
           <span>Developed by RedTraining</span>
         </footer>
