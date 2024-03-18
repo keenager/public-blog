@@ -1,4 +1,4 @@
-import { routeList, tagBlogRouteList } from "@/lib/constants";
+import { routeList, routeListByTag } from "@/lib/constants";
 import MenuLink from "./link";
 
 export default function SideBar() {
@@ -18,7 +18,7 @@ export default function SideBar() {
             <MenuLink href={href} name={name} />
             {href.includes("blog") && (
               <ul>
-                {tagBlogRouteList.map(({ href, name }) => (
+                {routeListByTag.map(({ href, name }) => (
                   <li key={href}>
                     <MenuLink href={href} name={name} />
                   </li>
