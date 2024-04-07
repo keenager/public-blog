@@ -1,7 +1,7 @@
 import PostList from "@/app/_components/blog/post-list";
 import MainTitle from "@/app/_components/common/main-title";
 import { getPostsByTag } from "@/lib/api";
-import { routeListByTag } from "@/lib/constants";
+import { routeListOfBlog } from "@/lib/constants";
 
 type Params = {
   params: { tag: string };
@@ -10,7 +10,8 @@ type Params = {
 export default function FilteredListByTag({ params }: Params) {
   const filteredList = getPostsByTag(params.tag);
   const tagName =
-    routeListByTag.find((route) => route.href.includes(params.tag))?.name || "";
+    routeListOfBlog.find((route) => route.href.includes(params.tag))?.name ||
+    "";
 
   return (
     <>
