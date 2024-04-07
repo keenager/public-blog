@@ -1,6 +1,6 @@
-import { routeList, routeListByTag } from "@/lib/constants";
+import { routeList } from "@/lib/constants";
 import Link from "next/link";
-import MenuLink from "./link";
+import SubMenu from "./subMenu";
 
 export default function MainBar() {
   return (
@@ -33,7 +33,7 @@ export default function MainBar() {
 function MainMenu() {
   return (
     <ul className="menu menu-horizontal p-0 m-0">
-      {routeList.map(({ href, name }) =>
+      {/* {routeList.map(({ href, name }) =>
         name === "블로그" ? (
           <BlogSubMenu key={href} />
         ) : (
@@ -41,34 +41,37 @@ function MainMenu() {
             <MenuLink href={href} name={name} />
           </li>
         )
-      )}
+      )} */}
+      {routeList.map(({ href, name, subRouteList }) => (
+        <SubMenu key={href} menuName={name} subRouteList={subRouteList} />
+      ))}
     </ul>
   );
 }
 
-function BlogSubMenu() {
-  const closeSubMenu = () => {
-    const $blogMenu = document.getElementById(
-      "blog-menu"
-    ) as HTMLDetailsElement;
-    $blogMenu.open = false;
-  };
+// function BlogSubMenu() {
+//   const closeSubMenu = () => {
+//     const $blogMenu = document.getElementById(
+//       "blog-menu"
+//     ) as HTMLDetailsElement;
+//     $blogMenu.open = false;
+//   };
 
-  return (
-    <li>
-      <details id="blog-menu">
-        <summary>블로그</summary>
-        <ul className="p-2 bg-base-100 rounded-t-none dark:bg-gray-900">
-          {routeListByTag.map(({ href, name }) => (
-            <li key={href} onClick={closeSubMenu}>
-              <MenuLink href={href} name={name} />
-            </li>
-          ))}
-        </ul>
-      </details>
-    </li>
-  );
-}
+//   return (
+//     <li>
+//       <details id="blog-menu">
+//         <summary>블로그</summary>
+//         <ul className="p-2 bg-base-100 rounded-t-none dark:bg-gray-900">
+//           {routeListByTag.map(({ href, name }) => (
+//             <li key={href} onClick={closeSubMenu}>
+//               <MenuLink href={href} name={name} />
+//             </li>
+//           ))}
+//         </ul>
+//       </details>
+//     </li>
+//   );
+// }
 
 function MenuSVG() {
   return (

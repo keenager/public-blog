@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "./_components/nav/nav-bar";
+import Navbar from "./_components/nav/navBar";
 import Script from "next/script";
-import GoogleAd from "./_components/common/google-ad";
 
 export const metadata: Metadata = {
   title: "RedTraining's Homepage",

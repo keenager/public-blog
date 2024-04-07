@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import MainBar from "./main-bar";
-import SideBar from "./side-bar";
+import MainBar from "./navBarMain";
+import SideBar from "./navBarSide";
 
 export default function Navbar() {
   return (

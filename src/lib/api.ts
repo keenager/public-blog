@@ -1,7 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import { routeListByTag } from "./constants";
+import { routeListOfBlog } from "./constants";
 import { Post } from "@/types/post";
 
 const postsDirectory = join(process.cwd(), "_posts");
@@ -28,7 +28,7 @@ export function getAllPosts(): Post[] {
 
 export function getPostsByTag(tag: string): Post[] {
   const fileNames = getFileNames();
-  const tagName = routeListByTag.find((route) =>
+  const tagName = routeListOfBlog.find((route) =>
     route.href.includes(tag)
   )?.name;
   const posts = fileNames
