@@ -9,11 +9,11 @@ export const routeListOfBlog = [
 ];
 
 export const routeListOfApps = [
-  { href: "/apps", name: "개요" },
-  { href: "/apps/roi", name: "수익률계산" },
+  { href: "/applications", name: "개요" },
+  { href: "/applications/roi", name: "수익률계산" },
 ];
 export const routeList = [
   // { href: "/", name: "홈페이지" },
   { href: "/blog", name: "블로그", subRouteList: routeListOfBlog },
-  { href: "/apps", name: "앱(App)", subRouteList: routeListOfApps },
+  { href: "/applications", name: "앱스(Apps)", subRouteList: routeListOfApps },
 ];
