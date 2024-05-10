@@ -1,7 +1,7 @@
 import { getROI } from "@/lib/calcROI";
 import { Invest } from "@/models/roiModels";
 
-export default function DisplayROI({
+export default function RoiTableRow({
   idx,
   invest,
   todayPrice,

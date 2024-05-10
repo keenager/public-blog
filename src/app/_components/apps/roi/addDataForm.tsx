@@ -10,8 +10,10 @@ import dayjs from "dayjs";
 import { Invest } from "@/models/roiModels";
 
 export default function AddDataForm({
+  updateCurData,
   updateList,
 }: {
+  updateCurData: Dispatch<SetStateAction<Invest>>;
   updateList: Dispatch<SetStateAction<Invest[]>>;
 }) {
   const [date, setDate] = useState("");
@@ -22,17 +24,23 @@ export default function AddDataForm({
   }, []);
 
   const dateChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    setDate((date) => event.target.value);
+    const newDate = event.target.value;
+    setDate((date) => newDate);
+    updateCurData((prev) => new Invest(newDate, prev.buyPrice));
   };
 
   const priceChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log(+event.target.value);
-    setPrice(+event.target.value);
+    const newPrice = +event.target.value;
+    setPrice(newPrice);
+    updateCurData((prev) => new Invest(prev.buyDate, newPrice));
   };
 
   const saveHandler = () => {
     const newItem = new Invest(date, price);
     updateList((list) => [...list, newItem]);
+    setDate(dayjs().format("YYYY-MM-DD"));
+    setPrice(0);
+    updateCurData((prev) => new Invest(date, 0));
   };
 
   return (
