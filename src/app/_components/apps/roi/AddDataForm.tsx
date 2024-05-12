@@ -44,8 +44,8 @@ export default function AddDataForm({
   };
 
   return (
-    <>
-      <label className="input input-bordered w-full max-w-xs flex items-center gap-2">
+    <div className="addForm m-1">
+      <label className="input input-bordered w-full max-w-xs flex items-center gap-2 my-1">
         <p className="basis-3/12">산 날</p>
         <input
           type="date"
@@ -54,7 +54,7 @@ export default function AddDataForm({
           onChange={dateChangeHandler}
         />
       </label>
-      <label className="input input-bordered w-full max-w-xs flex items-center gap-2">
+      <label className="input input-bordered w-full max-w-xs flex items-center gap-2 my-1">
         <p className="basis-3/12">살 때 가격</p>
         <input
           type="number"
@@ -65,9 +65,9 @@ export default function AddDataForm({
         />
         <p className="basis-1/12 text-center">원</p>
       </label>
-      <button className="btn btn-primary" onClick={saveHandler}>
+      <button className="btn btn-primary my-1" onClick={saveHandler}>
         저 장
       </button>
-    </>
+    </div>
   );
 }
