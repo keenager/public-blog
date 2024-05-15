@@ -1,10 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Invest } from "@/models/roiModels";
 import AddDataForm from "@/app/_components/apps/roi/AddDataForm";
 import RoiTable from "@/app/_components/apps/roi/RoiTable";
 import MainTitle from "@/app/_components/common/main-title";
 import dayjs from "dayjs";
+
+export type DataType = { date: string; price: number };
 
 export default function ROIPage() {
   // const invs = [new Invest("2024-3-1", 1000), new Invest("2024-3-10", 1100)];
@@ -12,6 +14,20 @@ export default function ROIPage() {
   const todayPrice = 1400;
   const [curInvest, setCurInvest] = useState<Invest>(new Invest(todayStr, 0));
   const [investList, setInvestList] = useState<Invest[]>([]);
+
+  useEffect(() => {
+    const storage = localStorage.getItem("roiData");
+    if (storage) {
+      const savedData: DataType[] = JSON.parse(storage);
+      console.log("savedData", savedData);
+      const loadedInvestList = savedData.map(
+        ({ date, price }) => new Invest(date, price)
+      );
+      setInvestList(loadedInvestList);
+    } else {
+      setInvestList([]);
+    }
+  }, []);
 
   return (
     <>

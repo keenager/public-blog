@@ -8,6 +8,8 @@ export default function RoiTable({
   item: Invest[] | Invest;
   todayPrice: number;
 }) {
+  const tableBody = getTableBody(item, todayPrice);
+
   return (
     <div className="overflow-x-auto">
       <table className="table">
@@ -22,21 +24,28 @@ export default function RoiTable({
             <th>연환산 수익률</th>
           </tr>
         </thead>
-        <tbody>
-          {Array.isArray(item) ? (
-            item.map((inv, idx) => (
-              <RoiTableRow
-                key={idx}
-                idx={idx}
-                invest={inv}
-                todayPrice={todayPrice}
-              />
-            ))
-          ) : (
-            <RoiTableRow idx={0} invest={item} todayPrice={todayPrice} />
-          )}
-        </tbody>
+        <tbody>{tableBody}</tbody>
       </table>
     </div>
   );
 }
+
+const getTableBody = (item: Invest[] | Invest, todayPrice: number) => {
+  if (Array.isArray(item)) {
+    if (item.length > 0) {
+      return item.map((inv, idx) => (
+        <RoiTableRow key={idx} idx={idx} invest={inv} todayPrice={todayPrice} />
+      ));
+    } else {
+      return (
+        <tr>
+          <td colSpan={7} className="text-center">
+            저장된 데이터가 없습니다!
+          </td>
+        </tr>
+      );
+    }
+  } else {
+    return <RoiTableRow idx={0} invest={item} todayPrice={todayPrice} />;
+  }
+};

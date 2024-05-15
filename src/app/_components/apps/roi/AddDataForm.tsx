@@ -8,6 +8,7 @@ import {
 } from "react";
 import dayjs from "dayjs";
 import { Invest } from "@/models/roiModels";
+import { DataType } from "@/app/applications/roi/page";
 
 export default function AddDataForm({
   updateCurData,
@@ -36,8 +37,14 @@ export default function AddDataForm({
   };
 
   const saveHandler = () => {
-    const newItem = new Invest(date, price);
-    updateList((list) => [...list, newItem]);
+    const prevData: DataType[] = JSON.parse(
+      localStorage.getItem("roiData") ?? "[]"
+    );
+    localStorage.setItem(
+      "roiData",
+      JSON.stringify([...prevData, { date, price }])
+    );
+    updateList((list) => [...list, new Invest(date, price)]);
     setDate(dayjs().format("YYYY-MM-DD"));
     setPrice(0);
     updateCurData((prev) => new Invest(date, 0));
