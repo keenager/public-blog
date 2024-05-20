@@ -16,6 +16,7 @@ export default function RoiTable({
         <thead>
           <tr className="bg-base-300">
             <th></th>
+            <th>종목</th>
             <th>산 날짜</th>
             <th>살때 가격</th>
             <th>가격 차이</th>

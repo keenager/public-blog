@@ -7,18 +7,20 @@ import {
   useState,
 } from "react";
 import dayjs from "dayjs";
-import { BuyItems, Invest, ItemType } from "@/models/roiModels";
 import { DataType } from "@/app/applications/roi/page";
+import { BuyItems, Invest } from "@/models/roiModels";
 
 type PropsType = {
   updateCurData: Dispatch<SetStateAction<Invest>>;
   updateList: Dispatch<SetStateAction<Invest[]>>;
-  updateItem: Dispatch<SetStateAction<ItemType>>;
+  investItem: (typeof BuyItems)[number];
+  updateItem: Dispatch<SetStateAction<(typeof BuyItems)[number]>>;
 };
 
 export default function AddDataForm({
   updateCurData,
   updateList,
+  investItem,
   updateItem,
 }: PropsType) {
   const [date, setDate] = useState("");
@@ -31,18 +33,23 @@ export default function AddDataForm({
   const dateChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     const newDate = event.target.value;
     setDate((date) => newDate);
-    updateCurData((prev) => new Invest(newDate, prev.buyPrice));
+    updateCurData((prev) => new Invest(prev.itemName, newDate, prev.buyPrice));
   };
 
   const priceChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     const newPrice = +event.target.value;
     setPrice(newPrice);
-    updateCurData((prev) => new Invest(prev.buyDate, newPrice));
+    updateCurData((prev) => new Invest(prev.itemName, prev.buyDate, newPrice));
   };
 
   const itemChangeHandler = (event: ChangeEvent<HTMLSelectElement>) => {
     const newItem = BuyItems.find((item) => item.value === event.target.value)!;
     updateItem(newItem);
+    updateCurData(
+      (prev) => new Invest(newItem.name, prev.buyDate, prev.buyPrice)
+    );
+    // const loadedInvestList = getFilteredInvestList(newItem.name);
+    // updateList(loadedInvestList);
   };
 
   const saveHandler = () => {
@@ -51,12 +58,12 @@ export default function AddDataForm({
     );
     localStorage.setItem(
       "roiData",
-      JSON.stringify([...prevData, { date, price }])
+      JSON.stringify([...prevData, { name: investItem.name, date, price }])
     );
-    updateList((list) => [...list, new Invest(date, price)]);
+    updateList((list) => [...list, new Invest(investItem.name, date, price)]);
     setDate(dayjs().format("YYYY-MM-DD"));
     setPrice(0);
-    updateCurData((prev) => new Invest(date, 0));
+    updateCurData((prev) => new Invest(investItem.name, date, 0));
   };
 
   return (

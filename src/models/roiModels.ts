@@ -1,24 +1,38 @@
 import dayjs from "dayjs";
 
-export type ItemType = { name: string; value: string };
-export const BuyItems: ItemType[] = [
+type ItemType = { name: string; value: string };
+// export const BuyItems: ItemType[] = [
+//   { name: "dollar", value: "달러($)" },
+//   { name: "yen", value: "엔(¥)" },
+// ] as const;
+
+function createItemsArray<
+  T extends readonly ItemType[] & Array<{ name: V; value: V }>,
+  V extends string
+>(...args: T) {
+  return args;
+}
+
+export const BuyItems = createItemsArray(
   { name: "dollar", value: "달러($)" },
-  { name: "yen", value: "엔(¥)" },
-];
+  { name: "yen", value: "엔(¥)" }
+);
+
+export type ItemNameType = (typeof BuyItems)[number]["name"];
 
 export class Invest {
-  // _itemName: string;
+  _itemName: ItemNameType;
   _buyDate: string;
   _buyPrice: number;
-  constructor(buyDate: string, buyPrice: number) {
-    // this._itemName = itemName;
+  constructor(itemName: ItemNameType, buyDate: string, buyPrice: number) {
+    this._itemName = itemName;
     this._buyDate = buyDate;
     this._buyPrice = buyPrice;
   }
 
-  // get itemName() {
-  //   return this._itemName;
-  // }
+  get itemName() {
+    return this._itemName;
+  }
 
   get buyDate() {
     return dayjs(this._buyDate).format("YYYY-MM-DD");

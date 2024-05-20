@@ -1,5 +1,5 @@
 import { getROI } from "@/lib/calcROI";
-import { Invest } from "@/models/roiModels";
+import { BuyItems, Invest } from "@/models/roiModels";
 
 export default function RoiTableRow({
   idx,
@@ -14,9 +14,13 @@ export default function RoiTableRow({
     investData,
     todayPrice
   );
+  const itemNameValue = BuyItems.find(
+    (item) => item.name === investData.itemName
+  )!.value;
   return (
     <tr className="hover">
       <th>{idx + 1}</th>
+      <td>{itemNameValue}</td>
       <td>{investData.buyDate}</td>
       <td>{investData.buyPrice}</td>
       <td>{priceDiff}</td>
