@@ -16,15 +16,13 @@ export default function SideBar() {
         {routeList.map(({ href, name, subRouteList }) => (
           <li key={href} onClick={hideDrawer}>
             <MenuLink href={href} name={name} />
-            {href.includes("blog") && (
-              <ul>
-                {subRouteList.map(({ href, name }) => (
-                  <li key={href}>
-                    <MenuLink href={href} name={name} />
-                  </li>
-                ))}
-              </ul>
-            )}
+            <ul>
+              {subRouteList.map(({ href, name }) => (
+                <li key={href}>
+                  <MenuLink href={href} name={name} />
+                </li>
+              ))}
+            </ul>
           </li>
         ))}
       </ul>

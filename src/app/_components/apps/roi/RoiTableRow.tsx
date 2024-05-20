@@ -3,25 +3,25 @@ import { Invest } from "@/models/roiModels";
 
 export default function RoiTableRow({
   idx,
-  invest,
+  investData,
   todayPrice,
 }: {
   idx: number;
-  invest: Invest;
+  investData: Invest;
   todayPrice: number;
 }) {
   const { dayDiff, priceDiff, returnRate, annualReturnRate } = getROI(
-    invest,
+    investData,
     todayPrice
   );
   return (
     <tr className="hover">
       <th>{idx + 1}</th>
-      <td>{invest.buyDate}</td>
-      <td>{invest.buyPrice}</td>
-      <td>{dayDiff}</td>
+      <td>{investData.buyDate}</td>
+      <td>{investData.buyPrice}</td>
       <td>{priceDiff}</td>
       <td>{returnRate}%</td>
+      <td>{dayDiff}</td>
       <td>{annualReturnRate}%</td>
     </tr>
   );

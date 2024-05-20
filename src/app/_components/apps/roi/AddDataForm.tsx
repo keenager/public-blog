@@ -7,16 +7,20 @@ import {
   useState,
 } from "react";
 import dayjs from "dayjs";
-import { Invest } from "@/models/roiModels";
+import { BuyItems, Invest, ItemType } from "@/models/roiModels";
 import { DataType } from "@/app/applications/roi/page";
+
+type PropsType = {
+  updateCurData: Dispatch<SetStateAction<Invest>>;
+  updateList: Dispatch<SetStateAction<Invest[]>>;
+  updateItem: Dispatch<SetStateAction<ItemType>>;
+};
 
 export default function AddDataForm({
   updateCurData,
   updateList,
-}: {
-  updateCurData: Dispatch<SetStateAction<Invest>>;
-  updateList: Dispatch<SetStateAction<Invest[]>>;
-}) {
+  updateItem,
+}: PropsType) {
   const [date, setDate] = useState("");
   const [price, setPrice] = useState(0);
 
@@ -36,6 +40,11 @@ export default function AddDataForm({
     updateCurData((prev) => new Invest(prev.buyDate, newPrice));
   };
 
+  const itemChangeHandler = (event: ChangeEvent<HTMLSelectElement>) => {
+    const newItem = BuyItems.find((item) => item.value === event.target.value)!;
+    updateItem(newItem);
+  };
+
   const saveHandler = () => {
     const prevData: DataType[] = JSON.parse(
       localStorage.getItem("roiData") ?? "[]"
@@ -52,6 +61,17 @@ export default function AddDataForm({
 
   return (
     <div className="addForm m-1">
+      <label className="input input-bordered w-full max-w-xs flex items-center gap-2 my-1">
+        <p className="basis-4/12">종목 선택</p>
+        <select
+          className="select select-ghost w-full"
+          onChange={itemChangeHandler}
+        >
+          {BuyItems.map((item) => (
+            <option key={item.name}>{item.value}</option>
+          ))}
+        </select>
+      </label>
       <label className="input input-bordered w-full max-w-xs flex items-center gap-2 my-1">
         <p className="basis-3/12">산 날</p>
         <input
