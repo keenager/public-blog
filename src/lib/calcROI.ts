@@ -23,7 +23,8 @@ export function getFilteredInvestList(name: string) {
   console.log("name", name);
   const filteredData = savedData.filter((data) => data.name === name);
   const loadedInvestList = filteredData.map(
-    ({ name, date, price }) => new Invest(name, date, price)
+    ({ id, name, date, price, quantity }) =>
+      new Invest(id, name, date, price, quantity)
   );
   return loadedInvestList;
 }

@@ -21,13 +21,27 @@ export const BuyItems = createItemsArray(
 export type ItemNameType = (typeof BuyItems)[number]["name"];
 
 export class Invest {
+  _id: string;
   _itemName: ItemNameType;
   _buyDate: string;
   _buyPrice: number;
-  constructor(itemName: ItemNameType, buyDate: string, buyPrice: number) {
+  _buyQuantity: number;
+  constructor(
+    id: string = "initialID",
+    itemName: ItemNameType,
+    buyDate: string,
+    buyPrice: number,
+    buyQuantity: number
+  ) {
+    this._id = id;
     this._itemName = itemName;
     this._buyDate = buyDate;
     this._buyPrice = buyPrice;
+    this._buyQuantity = buyQuantity;
+  }
+
+  get id() {
+    return this._id;
   }
 
   get itemName() {
@@ -40,6 +54,10 @@ export class Invest {
 
   get buyPrice() {
     return this._buyPrice;
+  }
+
+  get buyQuantity() {
+    return this._buyQuantity;
   }
 
   get today() {
