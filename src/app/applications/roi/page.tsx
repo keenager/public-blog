@@ -45,20 +45,24 @@ export default function ROIPage() {
         investItem={investItem}
         updateItem={setInvestItem}
       />
-      <div className="flex flex-col md:flex-row md:justify-evenly md:items-center my-1">
-        <p>
-          오늘: {todayStr}
-          {/* &emsp;  */}
-        </p>
+      <div className="divider" />
+      <div className="flex flex-col md:flex-row md:justify-evenly md:items-center">
+        <div className="text-center">
+          <p>오늘</p>
+          <p className="text-xl">{todayStr}</p>
+        </div>
         <label className="input input-bordered w-full max-w-xs flex items-center gap-2 my-1">
-          <p className="basis-3/12">오늘 {investItem.value} 가격</p>
-          <input
-            type="number"
-            value={todayPrice.toString()}
-            min={0}
-            className="grow basis-8/12"
-            onChange={todayPriceChangeHandler}
-          />
+          <p className="basis-6/12">오늘 {investItem.value} 가격</p>
+          <div className="basis-5/12">
+            <input
+              type="number"
+              value={todayPrice.toString()}
+              min={0}
+              // className="grow "
+              onChange={todayPriceChangeHandler}
+              className="w-full text-right bg-inherit"
+            />
+          </div>
           <p className="basis-1/12 text-center">원</p>
         </label>
       </div>
@@ -67,12 +71,15 @@ export default function ROIPage() {
         todayPrice={todayPrice}
         updateList={setInvestList}
       />
-      <p>저장된 데이터</p>
-      <RoiTable
-        investData={investList}
-        todayPrice={todayPrice}
-        updateList={setInvestList}
-      />
+      <div className="divider" />
+      <div>
+        <p className="text-center font-medium">저장된 데이터</p>
+        <RoiTable
+          investData={investList}
+          todayPrice={todayPrice}
+          updateList={setInvestList}
+        />
+      </div>
     </>
   );
 }

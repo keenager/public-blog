@@ -127,44 +127,52 @@ export default function AddDataForm({
     <div className="addForm m-1 flex flex-col items-center">
       <label className="input input-bordered w-full max-w-xs flex items-center gap-2 my-1">
         <p className="basis-4/12">종목 선택</p>
-        <select
-          className="select select-ghost w-full"
-          onChange={itemChangeHandler}
-        >
-          {BuyItems.map((item) => (
-            <option key={item.name}>{item.value}</option>
-          ))}
-        </select>
+        <div className="basis-8/12">
+          <select
+            className="select select-ghost  w-full"
+            onChange={itemChangeHandler}
+          >
+            {BuyItems.map((item) => (
+              <option key={item.name}>{item.value}</option>
+            ))}
+          </select>
+        </div>
       </label>
       <label className="input input-bordered w-full max-w-xs flex items-center gap-2 my-1">
-        <p className="basis-3/12">산 날</p>
-        <input
-          type="date"
-          value={date}
-          className="grow basis-9/12"
-          onChange={dateChangeHandler}
-        />
+        <p className="basis-4/12">산 날</p>
+        <div className="basis-8/12">
+          <input
+            type="date"
+            value={date}
+            className="w-full bg-inherit"
+            onChange={dateChangeHandler}
+          />
+        </div>
       </label>
       <label className="input input-bordered w-full max-w-xs flex items-center gap-2 my-1">
-        <p className="basis-3/12">살 때 가격</p>
-        <input
-          type="number"
-          value={price.toString()}
-          min={0}
-          className="grow basis-8/12"
-          onChange={priceChangeHandler}
-        />
-        <p className="basis-1/12 text-center">원</p>
+        <p className="basis-4/12">살 때 가격</p>
+        <div className="basis-5/12">
+          <input
+            type="number"
+            value={price.toString()}
+            min={0}
+            className="grow w-full text-right bg-inherit"
+            onChange={priceChangeHandler}
+          />
+        </div>
+        <p className="basis-3/12 text-center">원</p>
       </label>
       <label className="input input-bordered w-full max-w-xs flex items-center gap-2 my-1">
-        <p className="basis-3/12">수량</p>
-        <input
-          type="number"
-          value={quantity.toString()}
-          min={0}
-          className="basis-6/12"
-          onChange={quantityChangeHandler}
-        />
+        <p className="basis-4/12">수량</p>
+        <div className="basis-5/12">
+          <input
+            type="number"
+            value={quantity.toString()}
+            min={0}
+            className="w-full text-right bg-inherit"
+            onChange={quantityChangeHandler}
+          />
+        </div>
         <p className="basis-3/12 text-center">{investItem.value}</p>
       </label>
       <div className="w-full max-w-xs flex justify-end">

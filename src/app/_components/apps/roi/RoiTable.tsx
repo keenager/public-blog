@@ -20,7 +20,7 @@ export default function RoiTable({
           <tr className="bg-base-300">
             <th></th>
             <th>종목</th>
-            <th>산 날짜</th>
+            <th className="w-5">산 날짜</th>
             <th>산 가격</th>
             <th>가격 차이</th>
             <th>수량</th>
@@ -65,7 +65,7 @@ const getTableBody = (
   } else {
     return (
       <RoiTableRow
-        idx={0}
+        idx={-1}
         investData={investData}
         todayPrice={todayPrice}
         updateList={updateList}

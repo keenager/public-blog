@@ -39,7 +39,7 @@ export default function RoiTableRow({
 
   return (
     <tr className="hover">
-      <th>{idx + 1}</th>
+      <th>{idx >= 0 ? idx + 1 : ""}</th>
       <td>{itemNameValue}</td>
       <td>{investData.buyDate}</td>
       <td>{investData.buyPrice}</td>
@@ -49,14 +49,18 @@ export default function RoiTableRow({
       <td>{returnRate}%</td>
       {/* <td>{dayDiff}</td>
       <td>{annualReturnRate}%</td> */}
-      <td>
-        <button
-          className="btn btn-sm"
-          onClick={() => deleteHandler(investData.id)}
-        >
-          삭제
-        </button>
-      </td>
+      {idx >= 0 ? (
+        <td>
+          <button
+            className="btn btn-sm"
+            onClick={() => deleteHandler(investData.id)}
+          >
+            삭제
+          </button>
+        </td>
+      ) : (
+        ""
+      )}
     </tr>
   );
 }
