@@ -14,8 +14,8 @@ function createItemsArray<
 }
 
 export const BuyItems = createItemsArray(
-  { name: "dollar", value: "달러($)" },
-  { name: "yen", value: "엔(¥)" }
+  { name: "yen", value: "엔(¥)" },
+  { name: "dollar", value: "달러($)" }
 );
 
 export type ItemNameType = (typeof BuyItems)[number]["name"];

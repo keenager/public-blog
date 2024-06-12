@@ -45,12 +45,9 @@ export default function ROIPage() {
         investItem={investItem}
         updateItem={setInvestItem}
       />
-      <div className="divider" />
+      <div className="divider">오늘</div>
       <div className="flex flex-col md:flex-row md:justify-evenly md:items-center">
-        <div className="text-center">
-          <p>오늘</p>
-          <p className="text-xl">{todayStr}</p>
-        </div>
+        <p className="text-center text-xl">{todayStr}</p>
         <label className="input input-bordered w-full max-w-xs flex items-center gap-2 my-1">
           <p className="basis-6/12">오늘 {investItem.value} 가격</p>
           <div className="basis-5/12">
@@ -71,15 +68,12 @@ export default function ROIPage() {
         todayPrice={todayPrice}
         updateList={setInvestList}
       />
-      <div className="divider" />
-      <div>
-        <p className="text-center font-medium">저장된 데이터</p>
-        <RoiTable
-          investData={investList}
-          todayPrice={todayPrice}
-          updateList={setInvestList}
-        />
-      </div>
+      <div className="divider mt-7">저장된 데이터</div>
+      <RoiTable
+        investData={investList}
+        todayPrice={todayPrice}
+        updateList={setInvestList}
+      />
     </>
   );
 }
