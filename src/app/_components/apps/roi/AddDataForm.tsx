@@ -11,14 +11,12 @@ import { DataType } from "@/app/applications/roi/page";
 import { BuyItems, Invest } from "@/models/roiModels";
 
 type PropsType = {
-  updateCurData: Dispatch<SetStateAction<Invest>>;
   updateList: Dispatch<SetStateAction<Invest[]>>;
   investItem: (typeof BuyItems)[number];
   updateItem: Dispatch<SetStateAction<(typeof BuyItems)[number]>>;
 };
 
 export default function AddDataForm({
-  updateCurData,
   updateList,
   investItem,
   updateItem,
@@ -31,64 +29,19 @@ export default function AddDataForm({
     setDate(dayjs().format("YYYY-MM-DD"));
   }, []);
 
-  const dateChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    const newDate = event.target.value;
-    setDate((date) => newDate);
-    updateCurData(
-      (prev) =>
-        new Invest(
-          prev.id,
-          prev.itemName,
-          newDate,
-          prev.buyPrice,
-          prev.buyQuantity
-        )
-    );
-  };
-
   const priceChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     const newPrice = +event.target.value;
     setPrice(newPrice);
-    updateCurData(
-      (prev) =>
-        new Invest(
-          prev.id,
-          prev.itemName,
-          prev.buyDate,
-          newPrice,
-          prev.buyQuantity
-        )
-    );
   };
 
   const quantityChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     const newQuantity = +event.target.value;
     setQuantity(newQuantity);
-    updateCurData(
-      (prev) =>
-        new Invest(
-          prev.id,
-          prev.itemName,
-          prev.buyDate,
-          prev.buyPrice,
-          newQuantity
-        )
-    );
   };
 
   const itemChangeHandler = (event: ChangeEvent<HTMLSelectElement>) => {
     const newItem = BuyItems.find((item) => item.value === event.target.value)!;
     updateItem(newItem);
-    updateCurData(
-      (prev) =>
-        new Invest(
-          prev.id,
-          newItem.name,
-          prev.buyDate,
-          prev.buyPrice,
-          prev.buyQuantity
-        )
-    );
     // const loadedInvestList = getFilteredInvestList(newItem.name);
     // updateList(loadedInvestList);
   };
@@ -118,10 +71,9 @@ export default function AddDataForm({
     setDate(dayjs().format("YYYY-MM-DD"));
     setPrice(0);
     setQuantity(0);
-    updateCurData(
-      (prev) => new Invest("initialID", investItem.name, date, 0, 0)
-    );
   };
+
+  const buyPriceTitle = investItem.name === "dollar" ? "1달러" : "100엔";
 
   return (
     <div className="addForm m-1 flex flex-col items-center">
@@ -139,18 +91,7 @@ export default function AddDataForm({
         </div>
       </label>
       <label className="input input-bordered w-full max-w-xs flex items-center gap-2 my-1">
-        <p className="basis-4/12">산 날</p>
-        <div className="basis-8/12">
-          <input
-            type="date"
-            value={date}
-            className="w-full bg-inherit"
-            onChange={dateChangeHandler}
-          />
-        </div>
-      </label>
-      <label className="input input-bordered w-full max-w-xs flex items-center gap-2 my-1">
-        <p className="basis-4/12">살 때 가격</p>
+        <p className="basis-4/12">{buyPriceTitle}</p>
         <div className="basis-5/12">
           <input
             type="number"

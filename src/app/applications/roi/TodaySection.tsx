@@ -17,11 +17,14 @@ export default function TodaySection({
     setTodayPrice(newPrice);
   };
 
+  const priceTitle =
+    (investItem.name === "dollar" ? "1" : "100") + investItem.value + " 가격";
+
   return (
     <div className="flex flex-col md:flex-row md:justify-evenly md:items-center">
       <p className="text-center text-xl">{todayStr}</p>
       <label className="input input-bordered w-full max-w-xs flex items-center gap-2 my-1">
-        <p className="basis-6/12">오늘 {investItem.value} 가격</p>
+        <p className="basis-6/12">{priceTitle}</p>
         <div className="basis-5/12">
           <input
             type="number"
