@@ -11,6 +11,7 @@ export const routeListOfBlog = [
 export const routeListOfApps = [
   { href: "/applications", name: "개요" },
   { href: "/applications/roi", name: "수익률계산" },
+  { href: "/applications/case-schedule", name: "기일부" },
 ];
 export const routeList = [
   // { href: "/", name: "홈페이지" },

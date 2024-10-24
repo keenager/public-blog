@@ -3,11 +3,11 @@ import { Suspense } from "react";
 import Loading from "../../_components/common/loading";
 
 export const metadata: Metadata = {
-  title: "수익률 계산기",
-  description: "투자 수익률(Return On Investment)을 계산하는 앱입니다.",
+  title: "기일부",
+  description: "재판 기일 지정할 때 사용할 일정(캘린더) 관리 앱입니다.",
 };
 
-export default async function ROILayout({
+export default async function ScheduleLayout({
   children,
 }: {
   children: React.ReactNode;
