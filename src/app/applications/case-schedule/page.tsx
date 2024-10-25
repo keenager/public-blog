@@ -1,5 +1,5 @@
 import MainTitle from "@/app/_components/common/main-title";
-import ScheduleTable from "./ScheduleTable";
+import ScheduleTable from "../../_components/apps/case-schedule/ScheduleTable";
 
 export default function ScheduleHome() {
   return (
