@@ -1,4 +1,6 @@
+import { useScheduleCtx } from "@/app/applications/case-schedule/provider";
 import { TcUnit } from "@/models/tcModel";
+import React from "react";
 
 export function TimeCell({ time }: { time: string }) {
   return (
@@ -6,13 +8,8 @@ export function TimeCell({ time }: { time: string }) {
   );
 }
 
-export function CaseNumCell({
-  tc,
-  cellClickHandler,
-}: {
-  tc: TcUnit;
-  cellClickHandler: (e: React.MouseEvent<HTMLDivElement>) => void;
-}) {
+export function CaseNumCell({ tc }: { tc: TcUnit }) {
+  const { cellClickHandler, contextHandler } = useScheduleCtx();
   const startLine = (tc.idx % 12) + 1;
   const endLine = startLine + tc.span;
   const className =
@@ -34,6 +31,7 @@ export function CaseNumCell({
       className={className}
       style={style}
       onClick={cellClickHandler}
+      onContextMenu={contextHandler}
     >
       {tc.caseNum}
     </div>

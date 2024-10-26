@@ -1,10 +1,14 @@
-"use client";
 import React from "react";
-import useSchedule from "@/lib/useSchedule";
 import TwoHourColumn from "./TwoHourColumn";
+import { useScheduleCtx } from "@/app/applications/case-schedule/provider";
 
 export default function ScheduleTable() {
-  const { tcList, cellClickHandler, mergeHandler } = useSchedule();
+  const { tcList, mergeHandler, breakHandler, cancelHandler } =
+    useScheduleCtx();
+
+  const clickHandler = () => {
+    document.getElementById("context-menu")!.style.display = "none";
+  };
 
   // 세 덩어리로 쪼개기
   const dividedList = [];
@@ -14,21 +18,28 @@ export default function ScheduleTable() {
 
   return (
     <>
-      <div className="grid grid-cols-3 grid-rows-1 grid-flow-col gap-x-1 gap-y-3">
+      <div
+        className="grid grid-cols-3 grid-rows-1 grid-flow-col gap-x-1 gap-y-3"
+        onClick={clickHandler}
+      >
         {dividedList.map((div, i) => (
-          <TwoHourColumn
-            key={i}
-            div={div}
-            cellClickHandler={cellClickHandler}
-          />
+          <TwoHourColumn key={i} div={div} />
         ))}
       </div>
-      <button className="btn btn-primary btn-sm" onClick={mergeHandler}>
-        Merge!
-      </button>
-      <button className="btn btn-primary btn-sm ml-3" onClick={() => {}}>
-        Break!
-      </button>
+      <ul
+        id="context-menu"
+        className="menu menu-vertical bg-base-200 rounded-box absolute hidden"
+      >
+        <li onClick={mergeHandler}>
+          <a>합치기</a>
+        </li>
+        <li onClick={breakHandler}>
+          <a>나누기</a>
+        </li>
+        <li onClick={cancelHandler}>
+          <a>취소</a>
+        </li>
+      </ul>
     </>
   );
 }
